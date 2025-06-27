@@ -1,5 +1,5 @@
 [build]
-  cmd = "templ generate && go build -o ./tmp/main ."
+  cmd = "templ generate && go build -o ./tmp/main ./src"
   bin = "tmp/main"
   include_ext = ["go", "templ"]
   exclude_regex = ["_templ.go"]
