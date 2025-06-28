@@ -7,7 +7,7 @@ import (
 )
 
 func ArticleListHandler(c echo.Context) error {
-	article := components.Article{Content: "this is a test article", Title: "Test Article", Author: "John Doe", Date: "2023-10-01"}
+	article := components.Article{Preview: "this is a test article", Title: "Test Article", Author: "John Doe", Date: "2023-10-01"}
 	articleList := components.ArticleList([]components.Article{article, article, article, article})
 
 	return Render(c, 200, articleList)
