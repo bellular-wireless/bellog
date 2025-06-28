@@ -1,17 +1,16 @@
 package main
 
 import (
-	"bellog/src/components"
+	"bellog/src/handlers"
 
 	"github.com/labstack/echo/v4"
 )
 
 func main() {
-	home := components.Home("test")
-
 	e := echo.New()
-	e.GET("/", func(c echo.Context) error {
-		return home.Render(c.Request().Context(), c.Response().Writer)
-	})
+
+	e.GET("/", handlers.HomeHandler)
+	e.GET("/articles", handlers.ArticleListHandler)
+
 	e.Logger.Fatal(e.Start(":9001"))
 }
